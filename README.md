@@ -8,6 +8,8 @@ Primeiro de tudo eu criei uma EC2 simples com frontend e configurei ela para ace
 
 \<img src="./media/ec2-front.png" display="flex">
 
+\<img src="./media/site.png" display="flex">
+
 2 Criação do RDS
 
 O RDS foi criado com postgres e nele utilizei o user postgres e senha admin 123. O mesmo aceita requisição de qualquer ip.
@@ -22,4 +24,6 @@ Após clonar o repositorio é só rodar o arquivo main.py
 
 \<img src="./media/ec2-back.png" display="flex">
 
-4
+Após todas essas etapas eu tive um problema na api que a mesma não estava realizando o post no banco, acredito ser problema na EC2 visto que as rotas estão certas e o código da api está atualizado. Não foi possível continuar mais testes dado a falta de tempo
+
+\<img src="./media/problema-api.png" display="flex">
