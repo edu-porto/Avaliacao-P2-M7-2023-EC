@@ -1,23 +1,25 @@
-# Template para avaliação P2
+# P2 - Eduardo França Porto
 
-Saída esperada após execução do programa:
+Etapas
 
-<img src="./media/tela-front.png" display="flex">
+1 Criação EC2 Frontend
 
-# IMPORTANTE:
+Primeiro de tudo eu criei uma EC2 simples com frontend e configurei ela para aceitar requisição de qualquer ip
 
-Para colocar o frontend para funcionar, colocar uma máquina EC2 rodando o Apache WebServer.
-Para isso, instalar dentro da EC2:
+\<img src="./media/ec2-front.png" display="flex">
 
-```bash
-sudo apt update
-sudo apt upgrade
-sudo apt install apache2
-# os arquivos do projeto devem estar em /var/www/html
-git clone https://github.com/Murilo-ZC/Avaliacao-P2-M7-2023-EC.git
-sudo cp ./Avaliacao-P2-M7-2023-EC/frontend /var/www/html
-```
+2 Criação do RDS
 
-Aqui pessoal, os arquivos já estaram disponíveis na porta 80, não necessário redirecionar.
+O RDS foi criado com postgres e nele utilizei o user postgres e senha admin 123. O mesmo aceita requisição de qualquer ip.
 
-> IMPORTANTE: Verificar as rotas e utilziar o seu próprio repositório com as modificações realizadas.
+\<img src="./media/conexao-dbvear.png" display="flex">
+
+3 Criação EC2 Backend
+
+Aqui eu subi uma nova instância de EC2 somente para o backend e tive de ajustar algumas configurações no repositório antes de subir. As mesmas são a da RDS com o nome e senha diferentes do que vieram no repositorio padrão . Também aceita requisição de qualquer ip.
+
+Após clonar o repositorio é só rodar o arquivo main.py
+
+\<img src="./media/ec2-back.png" display="flex">
+
+4
