@@ -37,6 +37,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
+
+@app.get("/health")
+def get_notes():
+    return {"I am healthy and running"}
+
+
+
 @app.get("/notes")
 def get_notes():
     cur.execute("SELECT * FROM minhas_notas;")
@@ -66,6 +74,7 @@ def delete_user(data: dict = Body()):
     cur.execute(f"DELETE FROM minhas_notas WHERE id = {data['id']};")
     con.commit()
     return {"data": "Nota deletada com sucesso!"}
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
